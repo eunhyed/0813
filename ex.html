@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link href="css/ex.css" rel="stylesheet">
+    <script src="js/ex.js" defer type="script"></script>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <!--탭 클릭시 페이지 변경-->
+    <h2>tabs</h2>
+    <p>탭 버튼 클릭시 페이지가 변경된다.</p>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'london')" id="defaultOpen">london</button>
+        <button class="tablinks" onclick="openCity(event, 'paris')">paris</button>
+        <button class="tablinks" onclick="openCity(event, 'tokyo')">tokyo</button>
+    </div>
+
+    <div id="london" class="tabcontent">
+        <h3>london</h3>
+        <p>런던입니다.</p>
+    </div>
+
+    <div id="paris" class="tabcontent">
+        <h3>paris</h3>
+        <p>파리입니다.</p>
+    </div>
+
+    <div id="tokyo" class="tabcontent">
+        <h3>tokyo</h3>
+        <p>도쿄입니다.</p>
+    </div>
+
+    <script>
+    function openCity(evt, cityName){
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for(i = 0; i < tabcontent.length; i++){
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for(i = 0; i < tablinks.length; i++){
+            tablinks[i].className = tablinks[i].className.replace("active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += "active";
+    }
+
+    document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html>

@@ -1,0 +1,467 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+img {
+    max-width: 100%;
+}
+
+#layout {
+    margin: auto;
+    position: relative;
+    max-width: 100%;
+}
+
+/*searchbtn*/
+
+.search {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    width: 50%;
+    height: 23vh;
+    top: 0;
+    left: 50%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.search-content {
+    position: relative;
+    top: 46%;
+    width: 80%;
+    text-align: center;
+    margin-top: 40px;
+    margin: auto;
+}
+
+.search .close {
+    position: absolute;
+    top: 10px;
+    right: 10%;
+    font-size: 40px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.search input[type=text] {
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+    float: left;
+    width: 80%;
+    background: white;
+}
+
+.search button {
+    width: 20%;
+    padding: 10px;
+    background: #ddd;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.search i {
+    display: block;
+}
+
+/*popmenu*/
+.popmenu {
+    height: 0%;
+    width: 100%;
+    padding: 0 15%;
+    position: fixed;
+    font-size: 12px;
+    z-index: 2;
+    background: rgba(2, 2, 2, 0.877);
+    overflow-y: hidden;
+    transition: 0.5s;
+}
+
+.popmenu ul {
+    display: flex;
+}
+
+.popmenu li {
+    width: 100%;
+    line-height: 40px;
+    text-align: center;
+}
+
+#popcontent li:hover {
+    background: rgb(216, 158, 158);
+    border-radius: 20px;
+}
+
+.popmenu a {
+    display: block;
+}
+
+#popcontent {
+    padding: 1%;
+    position: relative;
+    top: 3%;
+    width: 100%;
+    margin-top: 30px;
+    transition: 0.3s;
+}
+
+.popmenu .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 10%;
+    font-size: 40px;
+}
+
+.popmenu h2 {
+    padding: 1% 3%;
+    margin-bottom: 2%;
+    color: rgba(208, 249, 255, 0.801);
+    font-size: 15px;
+    border-bottom: 4px double rgb(255, 255, 255);
+}
+
+
+/*popmenu1*/
+.popnavi {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.popnavi a:hover {
+    letter-spacing: 20px;
+    background: rgb(100, 100, 100);
+}
+
+/*헤더*/
+header {
+    margin: auto;
+    padding: 1%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    font-size: 12px;
+}
+
+/*스크롤 표시기*/
+.progress-container {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    height: 3px;
+}
+
+.progress-bar {
+    height: 3px;
+    background: #830000;
+    width: 0%;
+}
+
+/*헤더 스크롤시 배경색 변경*/
+.active {
+    background-color: rgb(12, 12, 12);
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease;
+}
+
+.deactive {
+    background-color: transparent;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease;
+}
+
+/*헤더에 버튼*/
+header button {
+    background: none;
+    cursor: pointer;
+    border: none;
+    padding: 9px;
+}
+
+/*헤더에 네브*/
+header nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+header ul {
+    display: flex;
+    text-align: center;
+}
+
+header li {
+    margin: 0 13px;
+}
+
+header li a {
+    padding: 5px 10px;
+    display: block;
+}
+
+/*비디오*/
+video {
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+/*메인*/
+main {
+    padding: 1% 5%;
+}
+
+main h2 {
+    padding: 2%;
+}
+
+/*슬라이드*/
+.slide {
+    overflow: hidden;
+    position: relative;
+}
+
+.imgslide {
+    width: 390%;
+    display: flex;
+}
+
+.imgslide img {
+    display: block;
+    padding: 0% 4%;
+}
+
+.imgslide a {
+    margin-left: 0.57%;
+}
+
+/*슬라이드 화살표 버튼*/
+.slidebtn {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100%;
+    top: 37%;
+}
+
+/*언어변경*/
+.lang {
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background: rgb(12, 12, 12);
+    padding: 0.5vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lang button {
+    border: none;
+    background: none;
+    padding: 0 3%;
+}
+
+.lang input {
+    text-align: center;
+    border: none;
+    background: none;
+    color: #fff;
+}
+
+/*베스트페이지*/
+.best {
+    position: relative;
+}
+
+.bestpage {
+    margin-top: 1%;
+    -webkit-animation: fadeEffect 1.5s;
+    animation: fadeEffect 1.5s;
+    margin-bottom:5%;
+}
+
+
+/*상품 더보기 버튼*/
+.morebtn{
+    width:20%;
+    padding-top:5%;
+    margin:auto;
+}
+
+.morebtn button{
+    border-radius:30px;
+    padding:0.6vw;
+    width:100%;
+    border:none;
+    background:rgb(160, 160, 160);
+    color:#fff;
+}
+
+/* 탭 부분 페이드 인 */
+@-webkit-keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*베스트 페이지 네비게이션*/
+.pagetab {
+    width: 100%;
+    padding-right: 2%;
+}
+
+.pagetab ul {
+    display: flex;
+    justify-content: end;
+}
+
+.pagetab button {
+    overflow: hidden;
+    border: none;
+    background: none;
+    padding: 5px 37px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pagetab button:hover {
+    border-bottom: 1px solid gray;
+    letter-spacing: 5px;
+}
+
+/*베스트 페이지 상품*/
+.bestpage ul {
+    display: grid;
+    grid-template-columns:repeat(auto-fill, minmax(345px, auto));
+}
+
+.bestpage li {
+    margin: auto;
+    padding: 5% 0;
+}
+
+figcaption {
+    color: #000;
+}
+
+/*상품 탭*/
+.active1 {
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    -webkit-transition-duration: 0.4s;
+    -webkit-transition-timing-function: ease;
+}
+
+/*btnbox 위로가기 버튼이 담겨있는 박스*/
+.btnbox{
+    position: fixed;
+    right:2%;
+    bottom:30%;
+    display: none;
+    background:#eee;
+    border-radius:20px;
+}
+
+.share{
+    margin:10px;
+}
+
+.share button{
+    width:100%;
+    padding:10px 0;
+    background:none;
+    border:none;
+    display:flex;
+    font-size:1.7rem;
+    color:#960000;
+}
+
+.share i:hover{
+    color:palevioletred;
+}
+
+.upbtn{
+    margin:10px;
+}
+
+.upbtn a{
+    color:black;
+    padding:10px 0;
+    display:flex;
+    font-size:2rem;
+}
+
+.upbtn a:hover{
+    color:palevioletred;
+}
+
+/*미디어쿼리*/
+@media screen and (max-width:768px){
+    /*상단*/
+    header{
+        padding:0;
+        border:1px solid red;
+    }
+
+    nav{
+        border:1px solid blue;
+    }
+
+    header ul{
+        border:1px solid black;
+        position:absolute;
+        top:100%;
+        width:100%;
+    }
+
+    .icon{
+        border:1px solid red;
+    }
+
+    .logo{
+        border:1px solid red;
+    }
+
+    .icon button:first-child, .icon button:nth-child(2){
+        display:none;
+
+    }
+}

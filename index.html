@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>무신사</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/9575841a1c.js" crossorigin="anonymous"></script>
+
+    <!-- 제이쿼리 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>-->
+    <!-- 합쳐지고 최소화된 최신 CSS 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">-->
+
+    <!-- 부트스트랩 css 사용 
+    <link rel="stylesheet" href="/css/bootstrap.css">-->
+    <!--  부트스트랩 js 사용 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>-->
+
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div id="layout">
+        <!--헤더-->
+        <header>
+            <!--네비게이션바-->
+            <nav class="deactive">
+                <a href="#" class="logo"><img src="images/logo.PNG" alt="로고"></a>
+                <ul>
+                    <li><a href="#">NEW10%</a></li>
+                    <li><a href="#">BEST</a></li>
+                    <li><a href="#">TOP</a></li>
+                    <li><a href="#">BOTTOM</a></li>
+                </ul>
+
+                <div class="icon">
+                    <button type="button"><img src="images/icon/user.PNG" alt="마이페이지"></button>
+                    <button type="button"><img src="images/icon/cart.PNG" alt="장바구니"></button>
+                    <button type="button" class="sear"><img src="images/icon/search.PNG" alt="검색"></button>
+                    <button type="button" onclick="openNav()"><img src="images/icon/ham.PNG" alt="더보기"></button>
+                </div>
+            </nav>
+
+            <!--스크롤표시기-->
+            <div class="progress-container">
+                <div class="progress-bar" id="myBar"></div>
+            </div>
+        </header>
+        <!-----------헤더 끝------------->
+        <!--서치버튼 클릭시 나오는 폼-->
+        <div id="searchbtn" class="search">
+            <span class="close" title="Close Overlay">&times;</span>
+            <div class="search-content">
+                <form action="/action_page.php">
+                    <input type="text" placeholder="Search...." name="search">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+            </div>
+        </div>
+        <!-----------검색창 끝------------->
+        <!--더보기 메뉴-->
+        <div id="pop" class="popmenu">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul class="popnavi" id="popcontent">
+                <li><a href="javascript:;">NEW</a></li>
+                <li><a href="javascript:;">BEST</a></li>
+                <li><a href="javascript:;">오늘출발</a></li>
+                <li><a href="javascript:;">득템찬스</a></li>
+            </ul>
+
+            <div class="shapmenu" id="popcontent">
+                <h2>샵</h2>
+                <ul>
+                    <li><a href="javascript:;">아우터</a></li>
+                    <li><a href="javascript:;">상의</a></li>
+                    <li><a href="javascript:;">트레이닝/홈웨어</a></li>
+                    <li><a href="javascript:;">가방</a></li>
+                    <li><a href="javascript:;">신발</a></li>
+                </ul>
+            </div>
+
+            <div class="comumenu" id="popcontent">
+                <h2>커뮤니티</h2>
+                <ul>
+                    <li><a href="javascript:;">기획전</a></li>
+                    <li><a href="javascript:;">이벤트</a></li>
+                    <li><a href="javascript:;">출석체크</a></li>
+                    <li><a href="javascript:;">후기</a></li>
+                    <li><a href="javascript:;">이벤트 당점자발표</a></li>
+                </ul>
+            </div>
+
+            <div class="mymenu" id="popcontent">
+                <h2>마이페이지</h2>
+                <ul>
+                    <li><a href="javascript:;">주문배송</a></li>
+                    <li><a href="javascript:;">장바구니</a></li>
+                    <li><a href="javascript:;">적립금/쿠폰</a></li>
+                    <li><a href="javascript:;">교환/반품신청</a></li>
+                    <li><a href="javascript:;">좋아요</a></li>
+                </ul>
+            </div>
+
+            <div class="setmenu" id="popcontent">
+                <h2>고객센터</h2>
+                <ul>
+                    <li><a href="javascript:;">공지사항</a></li>
+                    <li><a href="javascript:;">1:1문의하기</a></li>
+                    <li><a href="javascript:;">자주묻는 질문</a></li>
+                    <li><a href="javascript:;">아이디/비번찾기</a></li>
+                    <li><a href="javascript:;">비회원 주문조회</a></li>
+                </ul>
+            </div>
+        </div>
+        <!---------더보기 메뉴 끝----------->
+        <!--배경 비디오-->
+        <video controls autoplay>
+            <source src="video/bgvideo.mp4" type="video/mp4">
+        </video>
+        <!--메인-->
+        <main>
+            <!--슬라이드-->
+            <h2>EVENT</h2>
+            <div class="slide">
+                <div class="imgslide" id="rolling">
+                    <a href="#"><img src="images/slide/slide1.jpg" alt="이미지슬라이드1"></a>
+                    <a href="#"><img src="images/slide/slide2.jpg" alt="이미지슬라이드2"></a>
+                    <a href="#"><img src="images/slide/slide3.jpg" alt="이미지슬라이드3"></a>
+                    <a href="#"><img src="images/slide/slide4.jpg" alt="이미지슬라이드4"></a>
+                    <a href="#"><img src="images/slide/slide5.jpg" alt="이미지슬라이드5"></a>
+                    <a href="#"><img src="images/slide/slide6.jpg" alt="이미지슬라이드6"></a>
+                    <a href="#"><img src="images/slide/slide7.jpg" alt="이미지슬라이드7"></a>
+                    <a href="#"><img src="images/slide/slide8.jpg" alt="이미지슬라이드8"></a>
+                </div>
+                <div class="slidebtn">
+                    <img src="images/icon/arrleeft.PNG" alt="왼쪽버튼" id="leftbtn">
+                    <img src="images/icon/arrright.PNG" alt="오른쪽버튼" id="rightbtn">
+                </div>
+            </div>
+            <!----------슬라이드 끝----------->
+
+            <!--언어변경버튼-->
+            <div class="lang">
+                <button type="button"><img src="images/icon/lang.PNG" alt="언어변경 아이콘"></button>
+                <input type="text" value="KR / WON">
+            </div>
+            <!--베스트 상품 페이지-->
+            <section class="best">
+                <h2>Weekly Best</h2>
+                <div class="pagetab">
+                    <ul>
+                        <li><button type="button" id="tab1">Best</button></li>
+                        <li><button type="button" id="tab2">Outer</button></li>
+                        <li><button type="button" id="tab3">Top</button></li>
+                        <li><button type="button" id="tab4">Bottom</button></li>
+                    </ul>
+                </div>
+                <!--베스트 부분-->
+                <div class="bestpage" id="weekly1">
+                    <ul class="week1" id="week">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best1.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best2.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best3.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best4.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best5.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best6.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best7.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best8.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--1-->
+                    <ul class="week2" id="week">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best9.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best10.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best11.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best12.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best13.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best14.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best15.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best16.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--2-->
+                    <ul class="week3" id="week">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best17.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best18.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best19.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best20.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best21.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best22.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best23.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/best/best24.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--3-->
+                    <div class="morebtn">
+                        <button type="button" id="mbtn"><i class="fa-solid fa-hand-pointer"> 더보기</i></button>
+                    </div>
+                </div>
+            </section>
+            <!--베스트 상품 끝-->
+
+            <!--아우터 상품 페이지-->
+            <section class="outer">
+                <div class="bestpage" id="weekly2">
+                    <ul class="week1">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer1.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer2.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer3.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer4.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer5.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer6.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer7.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer8.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--1-->
+                    <ul class="week2">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer9.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer10.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer11.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer12.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer13.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer14.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer15.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer16.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--2-->
+                    <ul class="week3">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer17.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer18.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer19.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer20.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer21.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer22.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer23.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/outer/outer24.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--3-->
+                    <div class="morebtn">
+                        <button type="button"><i class="fa-solid fa-hand-pointer"> 더보기</i></button>
+                    </div>
+                </div>
+            </section>
+            <!--아우터 상품 끝-->
+
+            <!--탑 상품 페이지-->
+            <section class="top">
+                <div class="bestpage" id="weekly3">
+                    <ul class="week1">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top1.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top2.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top3.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top4.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top5.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top6.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top7.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top8.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--1-->
+                    <ul class="week2">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top9.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top10.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top11.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top12.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top13.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top14.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top15.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top16.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--2-->
+                    <ul class="week3">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top17.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top18.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top19.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top20.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top21.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top22.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top23.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/top/top24.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--3-->
+                    <div class="morebtn">
+                        <button type="button"><i class="fa-solid fa-hand-pointer"> 더보기</i></button>
+                    </div>
+                </div>
+            </section>
+            <!--탑 상품 끝-->
+
+            <!--바텀 상품 페이지-->
+            <section class="bottom">
+                <div class="bestpage" id="weekly4">
+                    <ul class="week1">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom1.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom2.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom3.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom4.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom5.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom6.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom7.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom8.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--1-->
+                    <ul class="week2">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom9.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom10.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom11.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom12.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom13.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom14.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom15.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom16.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--2-->
+                    <ul class="week3">
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom17.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom18.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom19.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom20.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom21.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom22.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom23.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+
+                        <li><a href="javascript:;">
+                                <figure>
+                                    <img src="images/bottom/bottom24.jpg" alt="와릿이즌">
+                                    <figcaption><b>와릿이즌</b><br>
+                                        [TERRS x WII]콜라보 그래픽 반팔 셔츠 블랙<br>
+                                        62,100원</figcaption>
+                                </figure>
+                            </a>
+                        </li>
+                    </ul>
+                    <!--3-->
+                    <div class="morebtn">
+                        <button type="button"><i class="fa-solid fa-hand-pointer"> 더보기</i></button>
+                    </div>
+                </div>
+            </section>
+            <!--바텀 상품 끝-->
+        </main>
+        <!--어사이드-->
+        <aside>
+
+        </aside>
+        <!--하단-->
+        <footer id="down">
+
+        </footer>
+    </div>
+    <!--스크립트-->
+    <script>
+        function openNav() {
+            document.getElementById("pop").style.height = "100%";
+        }
+
+        function closeNav() {
+            document.getElementById("pop").style.height = "0%";
+        }
+    </script>
+
+<div class="btnbox">
+    <div class="share">
+        <button type="button"><i class="fa-solid fa-share-nodes"></i></button>
+        <button type="button"><i class="fa-solid fa-cart-shopping"></i></button>
+    </div>
+    <div class="upbtn">
+        <a href="javascript:;" class="up"><i class="fa-solid fa-circle-chevron-up"></i></a>
+        <a href="javascript:;" class="down"><i class="fa-solid fa-circle-chevron-down"></i></a>
+    </div>
+</div>
+</body>
+<!---------전체 몸 끝---------->
+
+</html>

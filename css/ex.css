@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+/*tab버튼 클릭시 페이지 변경*/
+.tab{
+    overflow:hidden;
+    border:1px solid #ccc;
+    background:#f1f1f1;
+}
+
+.tab button{
+    background:inherit;/*궁금함*/
+    float:left;
+    border:none;
+    outline:none;
+    cursor:pointer;
+    padding:14px 16px;
+    transition:0.3s;
+    font-size:20px;
+}
+
+.tab button:hover{
+    background:#ddd;
+}
+
+.tab button.active{
+    background:#ccc;
+}
+
+.tabcontent{
+    display:none;
+    padding:6px 12px;
+    border:1px solid #ccc;
+    border-top:none;
+    animation:fadeEffect 1s;
+}
+
+@keyframes fadeEffect{
+    from{opacity:0;}
+    to{opacity:1;}
+}
